@@ -42,3 +42,91 @@
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
+// Function to calculate the sum
+int findSum(int arr[], int size)
+{
+    int sum = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+// Function to calculate the average
+double findAverage(int arr[], int size)
+{
+    int sum = findSum(arr, size);
+    return (double)sum / size;
+}
+
+// Function to find the maximum value
+int findMaximum(int arr[], int size)
+{
+    int max = arr[0];
+
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    return max;
+}
+
+// Function to find the minimum value
+int findMinimum(int arr[], int size)
+{
+    int min = arr[0];
+
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+
+    return min;
+}
+
+int main()
+{
+    int n;
+
+    cout << "How many numbers? ";
+    cin >> n;
+
+    // Check if n is valid
+    if (n <= 0)
+    {
+        cout << "Error: Number of values must be greater than 0." << endl;
+        return 0;
+    }
+
+    int arr[n];
+
+    // Read the numbers
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter number " << i + 1 << ": ";
+        cin >> arr[i];
+    }
+
+    // Display the results
+    cout << "\nResults:" << endl;
+    cout << "Sum: " << findSum(arr, n) << endl;
+    cout << "Average: " << findAverage(arr, n) << endl;
+    cout << "Maximum: " << findMaximum(arr, n) << endl;
+    cout << "Minimum: " << findMinimum(arr, n) << endl;
+
+    return 0;
+}
+

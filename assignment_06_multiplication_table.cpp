@@ -57,3 +57,65 @@
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
+// Part A - Print the multiplication table for one number
+void singleTable(int num)
+{
+    cout << "\nMultiplication Table for " << num << ":" << endl;
+
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+}
+
+// Part B - Print multiplication tables from 1 to N
+void allTables(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "\nMultiplication Table for " << i << ":" << endl;
+
+        for (int j = 1; j <= 12; j++)
+        {
+            cout << i << " x " << j << " = " << i * j << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
+
+int main()
+{
+    int num;
+    int n;
+
+    // Part A
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (num <= 0)
+    {
+        cout << "Error: Number must be greater than 0." << endl;
+        return 0;
+    }
+
+    singleTable(num);
+
+    // Part B
+    cout << "\nEnter a number N: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: Number must be greater than 0." << endl;
+        return 0;
+    }
+
+    allTables(n);
+
+    return 0;
+}
+
